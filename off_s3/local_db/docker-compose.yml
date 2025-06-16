@@ -1,0 +1,27 @@
+services:
+  db:
+    image: postgres:15
+    container_name: fred_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: YOUR_USERNAME
+      POSTGRES_PASSWORD: YOUR_PASSWORD
+      POSTGRES_DB: YOUR_DB
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  python:
+    build: .
+    container_name: fred_script
+    depends_on:
+      - db
+    volumes:
+      - .:/app  # Optional: Mounts current folder into container
+    working_dir: /app
+    command: ["python", "fetch_and_import.py"] 
+    restart: "no"
+
+volumes:
+  pgdata:

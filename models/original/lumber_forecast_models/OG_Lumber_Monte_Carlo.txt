@@ -1,0 +1,36 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+# historical lumber % changes (weekly)
+lumber_returns = merged_df['lumber_price'].pct_change().dropna()
+
+# Monte Carlo Simulation
+np.random.seed(42)
+num_simulations = 100000000
+future_weeks = 4  # 1 = Week
+
+final_prices = []
+
+# Run Simulations
+for _ in range(num_simulations):
+    random_returns = np.random.choice(lumber_returns, size=future_weeks, replace=True)
+    simulated_price = merged_df['lumber_price'].iloc[-1] * np.prod(1 + random_returns)
+    final_prices.append(simulated_price)
+
+# Calculate Probabilities
+current_price = merged_df['lumber_price'].iloc[-1]
+up_probability = np.mean(np.array(final_prices) > current_price)
+down_probability = 1 - up_probability
+
+print(f"Probability lumber price increases over next {future_weeks} weeks: {up_probability:.2%}")
+print(f"Probability lumber price decreases over next {future_weeks} weeks: {down_probability:.2%}")
+
+# Plot Distribution
+plt.figure(figsize=(8,6))
+plt.hist(final_prices, bins=50, color='skyblue', edgecolor='black')
+plt.axvline(current_price, color='red', linestyle='--', label='Current Price')
+plt.title(f"Lumber Price Distribution After {future_weeks} Weeks")
+plt.xlabel('Simulated Price')
+plt.ylabel('Frequency')
+plt.legend()
+plt.show()

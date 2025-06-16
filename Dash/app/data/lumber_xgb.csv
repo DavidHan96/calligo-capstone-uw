@@ -1,0 +1,17 @@
+Feature,Importance
+lumber_volatility_4w,45.0
+yield_curve,29.0
+lumber_pct_change_4w,23.0
+lumber_sma_4w,15.0
+mortgage_rate,14.0
+ppi,13.0
+month,12.0
+housing_starts,11.0
+building_permits,11.0
+month_sin,10.0
+lumber_sma_12w,8.0
+cpi,7.0
+m2_money_supply,5.0
+month_cos,4.0
+construction_spending,2.0
+unemployment_rate,1.0

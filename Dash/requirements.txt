@@ -1,0 +1,8 @@
+dash
+plotly
+pandas
+boto3
+nbclient
+matplotlib
+scikit-learn
+statsmodels

@@ -29,7 +29,7 @@ Calligo is a full-stack data pipeline that pulls macroeconomic time series from 
 # Build and start the services
 docker build -t dash .
 docker run -p 8050:8050 dash
-
+```
 
 ![Slide 1](slides/Slide1.png)
 ![Slide 2](slides/Slide2.png)

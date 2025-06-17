@@ -23,14 +23,35 @@ Calligo is a full-stack data pipeline that pulls macroeconomic time series from 
 - Pandas, Scikit-learn, statsmodels
 - AWS S3 
 
-## 📦 Setup (Docker)
+## 📦 Setup 
 
+### Fetching data
+1. To fetch and store the data in your s3 instance, start by inserting your Fred API key from [FRED](https://fred.stlouisfed.org/docs/api/api_key.html) in the 12th line of FRED_crawler.py
+2. Using your s3 keys, replace line 20 with your aws access key ID, 21 with your aws secret access key and your endpoint URL.
+3. Make sure you have already created a bucket named fred in your s3 instance or rename line 23 with your preferred bucket.
+4. (Optional) Change the series limit on line 17 if you do not want to have it go through all of them
+5. To start fetching data, have your terminal in the /Data_Fetching folder and use these commands:
 ```bash
-# Build and start the services
-docker build -t dash .
-docker run -p 8050:8050 dash
-```
+# 6.  Build the image (tagged “fred-crawler”)
+docker build -t fred-crawler .
 
+# 7.  Run the container
+docker run fred-crawler
+```
+   
+### Dash
+1. To start the Dash app, have your terminal in the /Dash folder and use these commands:
+```bash
+# 2.  Build the image (tagged “dash”)
+docker build -t dash .
+
+# 3.  Run the container
+docker run -p 8050:8050 dash
+#            ^^^^ host : container
+#            (use 8051:8050 if 8050 is busy)
+```
+4. Open any browser at http://localhost:8050
+   
 ![Slide 1](slides/Slide1.png)
 ![Slide 2](slides/Slide2.png)
 ![Slide 3](slides/Slide3.png)

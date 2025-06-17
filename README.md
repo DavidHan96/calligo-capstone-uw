@@ -34,9 +34,9 @@ docker run -p 8050:8050 dash
 ![Slide 1](slides/Slide1.png)
 ![Slide 2](slides/Slide2.png)
 ![Slide 3](slides/Slide3.png)
-## Solution Overview
+## 🗺️ Solution Overview
 ![Slide 4](slides/Slide4.png)
-## Live Demo
+## 🎥 Live Demo
 [![Watch the Demo](assets/etl_pipeline.png)](https://youtu.be/QnYO6jEtZjE)
 [![Watch the Demo](assets/dash.png)](https://youtu.be/Mv3E31pOVcQ)
 ![Slide 7](slides/Slide7.png)
@@ -45,7 +45,7 @@ docker run -p 8050:8050 dash
 
 ---
 
-## Known issues
+## 🚧 Known issues
 ### Incremental loading 
 Our incremental loading needs to be ran relatively often once all the data is loaded otherwise the data won't be included in the refresh.
 Another issue we have not tackled due to the limiting rates of the fred API is a check if any of the data has been change in the past: this will not be captured and could cause issues with some of our predictive models.
@@ -59,7 +59,7 @@ The VAR model is not a consistent model: it is currently more of a test jupyer n
 
 ---
 
-## Authors
+## 🧑‍💻 Authors
 [Chirayu Betkekar](https://www.linkedin.com/in/chirayu-betkekar/)
 [David (Sin Myung) Han](https://www.linkedin.com/in/sinmyunghan/)
 [Beckten Harkleroad](https://www.linkedin.com/in/beckten-harkleroad/)

@@ -51,7 +51,16 @@ docker run -p 8050:8050 dash
 #            (use 8051:8050 if 8050 is busy)
 ```
 4. Open any browser at http://localhost:8050
-   
+
+### Running the models
+1. To run the models which aren't already loaded with the Dash app, simply use any app which lets you run python notebooks and load the files located in Calligo/models/dash_notebooks.
+2. Make sure that you have your s3 instance with the data and change the first code block with your aws credentials
+3. If you do not have the data loaded yet, or a gpu for the monte carlo, the original files in the Calligo/models/original folders contain models which run with data manually downloaded from [FRED](https://fred.stlouisfed.org/docs/api/api_key.html)
+
+### Data fetching without s3
+
+---
+
 ![Slide 1](slides/Slide1.png)
 ![Slide 2](slides/Slide2.png)
 ![Slide 3](slides/Slide3.png)

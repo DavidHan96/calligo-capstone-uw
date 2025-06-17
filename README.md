@@ -78,7 +78,7 @@ docker run fred-crawler
 ```
 
 ---
-
+## 🧑‍🎓 Presentation of the project
 ![Slide 1](slides/Slide1.png)
 ![Slide 2](slides/Slide2.png)
 ![Slide 3](slides/Slide3.png)

@@ -23,6 +23,8 @@ Calligo is a full-stack data pipeline that pulls macroeconomic time series from 
 - Pandas, Scikit-learn, statsmodels
 - AWS S3 
 
+---
+
 ## 📦 Setup 
 
 ### Fetching data
@@ -58,6 +60,22 @@ docker run -p 8050:8050 dash
 3. If you do not have the data loaded yet, or a gpu for the monte carlo, the original files in the Calligo/models/original folders contain models which run with data manually downloaded from [FRED](https://fred.stlouisfed.org/docs/api/api_key.html)
 
 ### Data fetching without s3
+1. If you do not have access to s3, you can still upload the data in your local machine by having your terminal in Calligo/off_s3/local_db and use the following commands:
+```bash
+# 2.  Compose the image in the background
+docker-compose up -d
+
+# 3.  Run the SQL instance
+docker exec -it fred_postgres psql -U fred_user -d fred_data
+```
+4. If you do not wish to use an postgres instance, have your terminal in Calligo/off_s3/local_csv and use the following commands:
+```bash
+# 5.  Build the image (tagged “fred-crawler”)
+docker build -t fred-crawler .
+
+# 6.  Run the container
+docker run fred-crawler
+```
 
 ---
 

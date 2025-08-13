@@ -25,6 +25,14 @@ Calligo is a full-stack data pipeline that pulls macroeconomic time series from 
 
 ---
 
+## My Role & Contributions
+- Built the data ingestion & preprocessing pipeline (FRED → cleaning → feature engineering)
+- Implemented and tuned XGBoost + Monte Carlo workflows; ran/validated experiments
+- Containerized the project with Docker for reproducible runs
+- Authored documentation and demo notebooks; prepared final presentation assets
+
+---  
+
 ## 📦 Setup 
 
 ### Fetching data
